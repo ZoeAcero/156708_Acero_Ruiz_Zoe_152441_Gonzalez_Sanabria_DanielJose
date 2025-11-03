@@ -2,12 +2,12 @@ package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.v
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.RegistroRepository
+import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.AuthRepository
 
 /**
  * Factory para crear una instancia de RegistroViewModel con el RegistroRepository inyectado.
  */
-class RegistroViewModelFactory(private val repository: RegistroRepository) : ViewModelProvider.Factory {
+class RegistroViewModelFactory(private val repository: AuthRepository) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

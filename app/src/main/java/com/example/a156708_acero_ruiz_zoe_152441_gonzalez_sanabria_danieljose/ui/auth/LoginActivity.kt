@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         // 2. CHEQUEO INICIAL (Protección)
         // Si el usuario ya está logeado, saltamos la pantalla de login.
         if (viewModel.isLoggedIn()) {
-            startActivity(Intent(packageContext = this, cls = MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
             return // Salir del onCreate
         }
