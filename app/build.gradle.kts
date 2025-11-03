@@ -63,7 +63,8 @@ dependencies {
 
     // ➡️ ROOM (Persistencia de datos local)
     implementation("androidx.room:room-runtime:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion") // Soporte para corrutinas en Room
+    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation(libs.firebase.auth.ktx) // Soporte para corrutinas en Room
     // Procesador de anotaciones de Room (MUY IMPORTANTE)
     kapt("androidx.room:room-compiler:$roomVersion")
 

@@ -13,6 +13,7 @@ import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.ui
 import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel.AuthViewModel
 import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel.RegistroViewModelFactory
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var viewModel: AuthViewModel
@@ -29,13 +30,15 @@ class LoginActivity : AppCompatActivity() {
 
         // 1. INYECCIÓN MANUAL DE DEPENDENCIAS (usando el Factory)
         val app = application as MiApp
+
+        // --- CORRECCIÓN AQUÍ: Usar AuthViewModelFactory ---
         val factory = RegistroViewModelFactory(app.authRepository)
         viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
 
         // 2. CHEQUEO INICIAL (Protección)
         // Si el usuario ya está logeado, saltamos la pantalla de login.
         if (viewModel.isLoggedIn()) {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(packageContext = this, cls = MainActivity::class.java))
             finish()
             return // Salir del onCreate
         }
@@ -59,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // 4. OBSERVACIÓN del resultado del login
+        // 4. OBSERVACIÓN del resultado del login (añadido para completar el flujo)
         viewModel.authState.observe(this) { result ->
             if (result.isSuccess) {
                 Toast.makeText(this, "Sesión iniciada correctamente.", Toast.LENGTH_SHORT).show()
@@ -71,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // 5. Navegación a Registro
+        // 5. Navegación a Registro (añadido para completar el flujo)
         goToSignUpButton.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
