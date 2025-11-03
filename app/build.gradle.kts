@@ -2,6 +2,7 @@
 val roomVersion = "2.6.1"
 val lifecycleVersion = "2.6.2"
 val coroutinesVersion = "1.7.3"
+val firebaseBomVersion = "32.7.0" // Versión estable de Firebase BOM
 
 plugins {
     alias(libs.plugins.android.application)
@@ -11,7 +12,6 @@ plugins {
     kotlin("kapt")
 
     // 2. Necesario para Firebase (Google Services)
-    // Nota: Asegúrate de tener esta dependencia declarada en el build.gradle de Nivel Superior (Project) si es un proyecto nuevo
     id("com.google.gms.google-services") version "4.4.0"
 }
 
@@ -61,10 +61,12 @@ dependencies {
     // ➡️ DEPENDENCIAS AÑADIDAS PARA EL EJERCICIO
     // ---------------------------------------------------------------------
 
+    // 1. FIREBASE: Usar BOM para gestionar las versiones
+    implementation(platform("com.google.firebase:firebase-bom:$firebaseBomVersion"))
+
     // ➡️ ROOM (Persistencia de datos local)
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
-    implementation(libs.firebase.auth.ktx) // Soporte para corrutinas en Room
     // Procesador de anotaciones de Room (MUY IMPORTANTE)
     kapt("androidx.room:room-compiler:$roomVersion")
 
@@ -74,8 +76,12 @@ dependencies {
 
     // ➡️ CORRUTINAS (Para tareas asíncronas)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+    // Necesario para la función .await() de Firebase Tasks
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
+
 
     // ➡️ FIREBASE (Autenticación)
+    // Se declara sin versión porque la BOM ya la define
     implementation("com.google.firebase:firebase-auth-ktx")
 
     // ---------------------------------------------------------------------
