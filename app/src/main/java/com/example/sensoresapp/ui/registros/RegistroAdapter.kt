@@ -1,4 +1,4 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.ui.registros
+package com.example.sensoresapp.ui.registros
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.R
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model.RegistroMedico
+import com.example.sensoresapp.R
+import com.example.sensoresapp.data.model.RegistroMedico
 
 
 // Recibe una función de clic para manejar la navegación a DetailActivity

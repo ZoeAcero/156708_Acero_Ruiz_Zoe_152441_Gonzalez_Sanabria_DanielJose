@@ -1,10 +1,10 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose
+package com.example.sensoresapp
 
 import android.app.Application
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.db.AppDatabase
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.AuthRepository
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.RegistroRepository
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.source.FirebaseDataSource
+import com.example.sensoresapp.data.db.AppDatabase
+import com.example.sensoresapp.data.repository.AuthRepository
+import com.example.sensoresapp.data.repository.RegistroRepository
+import com.example.sensoresapp.data.source.FirebaseDataSource
 
 class MiApp : Application() {
     // Inicialización perezosa (lazy) de la BD para que solo se cree al usarse por primera vez

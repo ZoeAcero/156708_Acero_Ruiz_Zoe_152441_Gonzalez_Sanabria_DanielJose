@@ -1,10 +1,10 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.db
+package com.example.sensoresapp.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model.RegistroMedico
+import com.example.sensoresapp.data.model.RegistroMedico
 
 @Database(entities = [RegistroMedico::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

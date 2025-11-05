@@ -1,11 +1,11 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.db
+package com.example.sensoresapp.data.db
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model.RegistroMedico
+import com.example.sensoresapp.data.model.RegistroMedico
 import kotlinx.coroutines.flow.Flow
 
 @Dao

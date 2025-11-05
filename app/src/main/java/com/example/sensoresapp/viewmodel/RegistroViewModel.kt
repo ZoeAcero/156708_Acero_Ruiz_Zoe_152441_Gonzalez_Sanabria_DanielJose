@@ -1,11 +1,11 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel
+package com.example.sensoresapp.viewmodel
 
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model.RegistroMedico
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.RegistroRepository
+import com.example.sensoresapp.data.model.RegistroMedico
+import com.example.sensoresapp.data.repository.RegistroRepository
 import kotlinx.coroutines.launch
 
 class RegistroViewModel(private val repository: RegistroRepository) : ViewModel() {

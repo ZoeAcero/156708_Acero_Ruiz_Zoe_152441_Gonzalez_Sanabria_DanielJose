@@ -1,8 +1,8 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel
+package com.example.sensoresapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.AuthRepository
+import com.example.sensoresapp.data.repository.AuthRepository
 
 /**
  * Factory para crear AuthViewModel con su AuthRepository.
