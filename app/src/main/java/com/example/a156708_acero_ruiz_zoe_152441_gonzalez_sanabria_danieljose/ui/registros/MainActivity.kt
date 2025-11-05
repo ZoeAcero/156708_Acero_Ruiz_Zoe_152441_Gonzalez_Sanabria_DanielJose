@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         // 1. INYECCIÓN DE DEPENDENCIAS (usando MiApp y Factory)
         val app = application as MiApp
         val factory = RegistroViewModelFactory(app.registroRepository)
-        registroViewModel = ViewModelProvider(this, factory).get(RegistroViewModel::class.java)
+        registroViewModel = ViewModelProvider(this, factory)[RegistroViewModel::class.java]
 
         // 2. CONFIGURACIÓN DEL RECYCLERVIEW
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_registros)

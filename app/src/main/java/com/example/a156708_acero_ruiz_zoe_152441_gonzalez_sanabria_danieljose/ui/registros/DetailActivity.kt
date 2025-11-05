@@ -36,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
         // 1. INYECCIÓN DE DEPENDENCIAS
         val app = application as MiApp
         val factory = RegistroViewModelFactory(app.registroRepository)
-        registroViewModel = ViewModelProvider(this, factory).get(RegistroViewModel::class.java)
+        registroViewModel = ViewModelProvider(this, factory)[RegistroViewModel::class.java]
 
         // 2. INICIALIZACIÓN DE VISTAS
         nombreInput = findViewById(R.id.edit_text_nombre)
