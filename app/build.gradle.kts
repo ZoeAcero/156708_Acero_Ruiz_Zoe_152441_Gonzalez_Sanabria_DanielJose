@@ -1,5 +1,5 @@
 // Versiones de las librerías a utilizar
-val roomVersion = "2.6.1"
+val roomVersion = "2.7.0-alpha01" // Versión actualizada para compatibilidad con Kotlin
 val lifecycleVersion = "2.6.2"
 val coroutinesVersion = "1.7.3"
 val firebaseBomVersion = "32.7.0" // Versión estable de Firebase BOM
@@ -13,13 +13,11 @@ plugins {
 
 android {
     namespace = "com.example.sensoresapp"
-    // CRÍTICO: Actualizado a 36
     compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.sensoresapp"
         minSdk = 24
-        // CRÍTICO: Actualizado a 36
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -51,15 +49,20 @@ android {
     }
 }
 
+// Bloque añadido para solucionar el IllegalAccessError (Opción 1)
+kotlin {
+    // Esto configura el toolchain para usar Java 17, que es compatible con KAPT.
+    // Si Java 17 no está instalado, Android Studio ofrecerá descargarlo.
+    jvmToolchain(17)
+}
+
 dependencies {
     // Dependencias base
-    // Si libs.core.ktx incluye androidx.core:1.17.0, el error de AGP es inevitable
-    // sin actualizar el AGP. Asumimos que actualizar el SDK resuelve el conflicto de librerías.
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.core.ktx) // <= Esta dependencia exige el SDK 36
+    implementation(libs.core.ktx)
 
     // FIREBASE: Usar BOM
     implementation(platform("com.google.firebase:firebase-bom:$firebaseBomVersion"))
@@ -67,7 +70,7 @@ dependencies {
     // Firebase Auth
     implementation("com.google.firebase:firebase-auth-ktx")
 
-    // Room
+    // Room - Usando la versión actualizada para compatibilidad
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
@@ -81,7 +84,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion")
 
     // Tests
-    implementation(libs.junit) // Se debe usar implementation() si está en libs.versions.toml
+    implementation(libs.junit)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
