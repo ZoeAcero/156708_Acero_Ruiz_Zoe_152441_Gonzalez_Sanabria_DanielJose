@@ -1,7 +1,7 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository
+package com.example.sensoresapp.data.repository
 
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.db.RegistroDao
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model.RegistroMedico
+import com.example.sensoresapp.data.db.RegistroDao
+import com.example.sensoresapp.data.model.RegistroMedico
 import kotlinx.coroutines.flow.Flow
 
 class RegistroRepository(private val registroDao: RegistroDao) {

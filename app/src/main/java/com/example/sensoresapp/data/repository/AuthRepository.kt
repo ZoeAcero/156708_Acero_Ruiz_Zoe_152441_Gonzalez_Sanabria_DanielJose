@@ -1,6 +1,6 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository
+package com.example.sensoresapp.data.repository
 
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.source.FirebaseDataSource
+import com.example.sensoresapp.data.source.FirebaseDataSource
 import com.google.firebase.auth.AuthResult
 
 

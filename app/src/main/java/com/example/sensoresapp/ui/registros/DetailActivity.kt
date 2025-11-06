@@ -1,4 +1,4 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.ui.registros
+package com.example.sensoresapp.ui.registros
 
 import android.os.Bundle
 import android.widget.Button
@@ -8,11 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.MiApp
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.R
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model.RegistroMedico
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel.RegistroViewModel
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel.RegistroViewModelFactory
+import com.example.sensoresapp.MiApp
+import com.example.sensoresapp.R
+import com.example.sensoresapp.data.model.RegistroMedico
+import com.example.sensoresapp.viewmodel.RegistroViewModel
+import com.example.sensoresapp.viewmodel.RegistroViewModelFactory
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -36,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
         // 1. INYECCIÓN DE DEPENDENCIAS
         val app = application as MiApp
         val factory = RegistroViewModelFactory(app.registroRepository)
-        registroViewModel = ViewModelProvider(this, factory).get(RegistroViewModel::class.java)
+        registroViewModel = ViewModelProvider(this, factory)[RegistroViewModel::class.java]
 
         // 2. INICIALIZACIÓN DE VISTAS
         nombreInput = findViewById(R.id.edit_text_nombre)

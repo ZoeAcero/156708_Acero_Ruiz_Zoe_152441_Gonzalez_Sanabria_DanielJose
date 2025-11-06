@@ -1,4 +1,4 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.ui.auth
+package com.example.sensoresapp.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,11 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.MiApp
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.R
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.ui.registros.MainActivity
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel.AuthViewModel
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel.RegistroViewModelFactory
-
+import com.example.sensoresapp.MiApp
+import com.example.sensoresapp.R
+import com.example.sensoresapp.ui.registros.MainActivity
+import com.example.sensoresapp.viewmodel.AuthViewModel
+import com.example.sensoresapp.viewmodel.AuthViewModelFactory
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var viewModel: AuthViewModel
@@ -28,8 +27,8 @@ class SignUpActivity : AppCompatActivity() {
 
         // 1. INYECCIÓN MANUAL DE DEPENDENCIAS (usando el Factory)
         val app = application as MiApp
-        val factory = RegistroViewModelFactory(app.authRepository)
-        viewModel = ViewModelProvider(this, factory).get(AuthViewModel::class.java)
+        val factory = AuthViewModelFactory(app.authRepository)
+        viewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
 
         // Inicialización de vistas (Reemplaza con tus IDs reales)
         emailInput = findViewById(R.id.edit_text_email_signup)

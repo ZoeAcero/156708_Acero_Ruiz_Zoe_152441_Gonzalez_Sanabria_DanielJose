@@ -1,4 +1,4 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.source
+package com.example.sensoresapp.data.source
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.AuthResult
@@ -19,6 +19,6 @@ class FirebaseDataSource {
     fun getCurrentUser() = auth.currentUser
 
     fun signOut() {
-        auth.signOut()
+        FirebaseAuth.getInstance().signOut()
     }
 }

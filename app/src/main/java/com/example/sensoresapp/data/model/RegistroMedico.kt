@@ -1,4 +1,4 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.model
+package com.example.sensoresapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

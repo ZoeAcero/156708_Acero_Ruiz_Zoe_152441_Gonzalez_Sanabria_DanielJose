@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">156708_Acero_Ruiz_Zoe_152441_Gonzalez_Sanabria_DanielJose</string>
+    <string name="fecha_registro">Fecha de registro: %1$s</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="a_adir_nuevo_registro">Añadir nuevo registro</string>
 </resources>

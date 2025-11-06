@@ -1,9 +1,9 @@
-package com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.viewmodel
+package com.example.sensoresapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 // CORRECCIÓN 1: Importar el Repositorio de Registros
-import com.example.a156708_acero_ruiz_zoe_152441_gonzalez_sanabria_danieljose.data.repository.RegistroRepository
+import com.example.sensoresapp.data.repository.RegistroRepository
 // IMPORTACIÓN ELIMINADA: import com.example.a156708...repository.AuthRepository
 
 /**
